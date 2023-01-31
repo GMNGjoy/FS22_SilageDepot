@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable type="productionPoint" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs22/placeable.xsd">
+    <storeData>
+        <name>$l10n_shopItem_silageDepotSmall</name>
+        <functions>
+            <function>$l10n_function_productionPoint</function>
+            <function>$l10n_function_silageDepot</function>
+        </functions>
+        <image>icons/store_farma400Silage.dds</image>
+        <price>130000</price>
+        <canBeSold>true</canBeSold>
+        <showInStore>true</showInStore>
+        <lifetime>1000</lifetime>
+        <rotation>110</rotation>
+        <brand>UNIA</brand>
+        <species>placeable</species>
+        <category>productionPoints</category>
+        <brush>
+            <type>placeable</type>
+            <category>production</category>
+            <tab>factories</tab>
+        </brush>
+        <vertexBufferMemoryUsage>2522368</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>392448</indexBufferMemoryUsage>
+        <textureMemoryUsage>4390912</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+        <shopTranslationOffset>0 0 0</shopTranslationOffset>
+        <shopRotationOffset>0 165 0</shopRotationOffset>
+        <storeIconRendering>
+            <settings cameraXRot="-10" cameraYRot="135" advancedBoundingBox="false" centerIcon="true" lightIntensity="2" showTriggerMarkers="false"/>
+        </storeIconRendering>
+    </storeData>
+
+    <base>
+        <filename>farma400Silage/farma400Silage.i3d</filename>
+        <canBeRenamed>true</canBeRenamed>
+        <boughtWithFarmland>true</boughtWithFarmland>
+    </base>
+
+    <placement useRandomYRotation="false" useManualYRotation="true" >
+        <testAreas>
+            <testArea startNode="testArea1Start" endNode="testArea1End" />
+            <testArea startNode="testArea2Start" endNode="testArea2End" />
+        </testAreas>
+
+        <sounds>
+            <place template="medImp" />
+        </sounds>
+    </placement>
+
+    <clearAreas>
+        <clearArea startNode="clearArea1Start" widthNode="clearArea1Width" heightNode="clearArea1Height"/>
+        <clearArea startNode="clearArea2Start" widthNode="clearArea2Width" heightNode="clearArea2Height"/>
+    </clearAreas>
+
+    <leveling requireLeveling="true" maxSmoothDistance="10" maxSlope="75" maxEdgeAngle="30" >
+        <levelAreas>
+            <levelArea startNode="levelArea1Start" widthNode="levelArea1Width" heightNode="levelArea1Height" groundType="gravel"/>
+            <levelArea startNode="levelArea2Start" widthNode="levelArea2Width" heightNode="levelArea2Height" groundType="gravel"/>
+        </levelAreas>
+    </leveling>
+
+    <indoorAreas>
+        <indoorArea startNode="clearArea1Start" widthNode="clearArea1Width" heightNode="clearArea1Height"/>
+    </indoorAreas>
+
+    <tipOcclusionUpdateAreas>
+        <tipOcclusionUpdateArea startNode="tipOcclusionUpdateArea1Start" endNode="tipOcclusionUpdateArea1End" />
+    </tipOcclusionUpdateAreas>
+
+    <ai>
+        <updateAreas>
+            <updateArea startNode="tipOcclusionUpdateArea1Start" endNode="tipOcclusionUpdateArea1End" />
+        </updateAreas>
+        <splines>
+            <spline node="aiSpline" />
+        </splines>
+    </ai>
+
+    <dynamicallyLoadedParts>
+        <dynamicallyLoadedPart filename="$data/placeables/sellingStationGeneric/sellingStationGenericNoCover.i3d" node="0" linkNode="grainGutterLinkNode" />
+    </dynamicallyLoadedParts>
+
+    <infoTrigger triggerNode="infoTrigger"/>
+
+    <triggerMarkers>
+        <triggerMarker node="markerUnloading"     filename="$data/shared/assets/marker/markerIcons.xml" id="UNLOAD" adjustToGround="true" />
+        <triggerMarker node="markerLoading"       filename="$data/shared/assets/marker/markerIcons.xml" id="LOAD"   adjustToGround="true" />
+        <triggerMarker node="playerTriggerMarker" filename="$data/shared/assets/marker/markerIcons.xml" id="WRENCH" adjustToGround="true" />
+    </triggerMarkers>
+
+    <hotspots>
+        <hotspot type="PRODUCTION_POINT" linkNode="teleportNode" teleportNode="teleportNode"/>
+    </hotspots>
+
+    <lights>
+        <group weatherRequiredFlags="NIGHT" />
+        
+        <sharedLight filename="$data/shared/assets/lights/terraLed/spotlight20W.xml" linkNode="spotLinked1" groupIndex="1"/>
+        <sharedLight filename="$data/shared/assets/lights/terraLed/spotlight20W.xml" linkNode="spotLinked2" groupIndex="1"/>
+
+        <realLights>
+            <high>
+                <light node="realLights" groupIndex="1"/>
+            </high>
+        </realLights>
+    </lights>
+
+    <productionPoint>
+        <productions sharedThroughputCapacity="false">
+            <production id="silageFermentorGrass" name="$l10n_recipe_silageGrass" cyclesPerHour="30" costsPerActiveHour="2">
+                <inputs>
+                    <input fillType="GRASS_WINDROW" amount="500"  />
+                </inputs>
+                <outputs>
+                    <output fillType="SILAGE"    amount="500" sellDirectly="false"/>
+                    <output fillType="DIGESTATE" amount="50" sellDirectly="false" />
+                </outputs>
+            </production>
+
+            <production id="silageFermentorHay" name="$l10n_recipe_silageHay" cyclesPerHour="30" costsPerActiveHour="2">
+                <inputs>
+                    <input fillType="DRYGRASS_WINDROW" amount="500"  />
+                </inputs>
+                <outputs>
+                    <output fillType="SILAGE"    amount="500" sellDirectly="false"/>
+                    <output fillType="DIGESTATE" amount="50" sellDirectly="false" />
+                </outputs>
+            </production>
+
+            <production id="silageFermentorChaff" name="$l10n_recipe_silageChaff" cyclesPerHour="30" costsPerActiveHour="2">
+                <inputs>
+                    <input fillType="CHAFF" amount="500" />
+                </inputs>
+                <outputs>
+                    <output fillType="SILAGE"    amount="500" sellDirectly="false"/>
+                    <output fillType="DIGESTATE" amount="50" sellDirectly="false" />
+                </outputs>
+            </production>
+        </productions>
+
+        <sellingStation appearsOnStats="false" supportsExtension="false">
+            <unloadTrigger exactFillRootNode="exactFillRootNode" fillTypes="GRASS_WINDROW DRYGRASS_WINDROW CHAFF SILAGE" aiNode="aiUnloadingNode"/>
+            <unloadTrigger fillTypes="GRASS_WINDROW DRYGRASS_WINDROW GRASS SILAGE">
+                <baleTrigger triggerNode="baleTrigger" deleteLitersPerSecond="10000" />
+            </unloadTrigger>
+        </sellingStation>
+
+        <loadingStation>
+			<loadTrigger triggerNode="loadingTrigger" dischargeNode="dischargeNode" fillTypes="GRASS_WINDROW DRYGRASS_WINDROW CHAFF SILAGE DIGESTATE" fillLitersPerSecond="5000" aiNode="aiLoadingNode">
+                <effectNode effectClass="PipeEffect" effectNode="pipeEffect"      materialType="pipe"           fadeTime="0.5" maxBending="0" controlPoint="4.8 0 0 0"/>
+                <effectNode                          effectNode="pipeEffectSmoke" materialType="unloadingSmoke" fadeTime="0.5" />
+			</loadTrigger>
+        </loadingStation>
+
+        <storage node="storage" isExtension="false" fillLevelSyncThreshold="100">
+			<capacity fillType="GRASS_WINDROW"  capacity="800000" />
+            <capacity fillType="DRYGRASS_WINDROW"  capacity="800000" />
+			<capacity fillType="CHAFF"  		capacity="800000" />
+            <capacity fillType="SILAGE"        	capacity="1600000" />
+            <capacity fillType="DIGESTATE"     	capacity="160000" />
+        </storage>
+
+        <playerTrigger node="playerTrigger" />
+
+        <sounds>
+            <active template="dairyWork" linkNode="0>" outerRadius="50"/>
+        </sounds>
+    </productionPoint>
+
+    <i3dMappings>
+        <i3dMapping id="uniaFarma200" node="0>5|0|0" />
+        <i3dMapping id="uniaFarma200_2" node="0>5|0|1" />
+
+        <i3dMapping id="infoTrigger" node="0>0|4" />
+        <i3dMapping id="aiSpline" node="0>0|5" />
+        <i3dMapping id="loadingTrigger" node="0>0|2|0|0" />
+        <i3dMapping id="pipeEffect" node="0>0|2|0|2|0" />
+        <i3dMapping id="pipeEffectSmoke" node="0>0|2|0|2|1" />
+        <i3dMapping id="exactFillRootNode" node="0>0|3|0" />
+        <i3dMapping id="grainGutterLinkNode" node="0>0|3|1" />
+        <i3dMapping id="dischargeNode" node="0>0|2|0|1" />
+        
+        <i3dMapping id="aiLoadingNode" node="0>0|2|0|3" />
+        <i3dMapping id="aiUnloadingNode" node="0>0|3|2" />
+
+        <i3dMapping id="playerTrigger" node="0>8" />
+        <i3dMapping id="playerTriggerMarker" node="0>8|0" />
+        <i3dMapping id="teleportNode" node="0>8|1" />
+       
+        <i3dMapping id="baleTrigger" node="0>9" />
+
+        <i3dMapping id="aiSpline" node="0>0|5" />
+
+        <i3dMapping id="markerLoading" node="0>0|2|1" />
+        <i3dMapping id="markerUnloading" node="0>0|3|3" />
+        <i3dMapping id="markerHotspot" node="0>0|6" />
+        
+        <i3dMapping id="testArea1Start" node="0>3|0" />
+        <i3dMapping id="testArea1End" node="0>3|0|0" />
+        <i3dMapping id="testArea2Start" node="0>3|1" />
+        <i3dMapping id="testArea2End" node="0>3|1|0" />
+
+        <i3dMapping id="clearArea1Start" node="0>1|0" />
+        <i3dMapping id="clearArea1Width" node="0>1|0|0" />
+        <i3dMapping id="clearArea1Height" node="0>1|0|1" />
+        <i3dMapping id="clearArea2Start" node="0>1|1" />
+        <i3dMapping id="clearArea2Width" node="0>1|1|0" />
+        <i3dMapping id="clearArea2Height" node="0>1|1|1" />
+
+        <i3dMapping id="levelArea1Start" node="0>2|0" />
+        <i3dMapping id="levelArea1Width" node="0>2|0|0" />
+        <i3dMapping id="levelArea1Height" node="0>2|0|1" />
+        <i3dMapping id="levelArea2Start" node="0>2|1" />
+        <i3dMapping id="levelArea2Width" node="0>2|1|0" />
+        <i3dMapping id="levelArea2Height" node="0>2|1|1" />
+
+        <i3dMapping id="tipOcclusionUpdateArea1Start" node="0>4|0" />
+        <i3dMapping id="tipOcclusionUpdateArea1End" node="0>4|0|0" />
+
+        <i3dMapping id="storage" node="0>2|1|1" />
+
+        <i3dMapping id="lights" node="0>10" />
+        <i3dMapping id="spotLinked1" node="0>10|0|0" />
+        <i3dMapping id="spotLinked2" node="0>10|0|1" />
+        <i3dMapping id="realLights" node="0>10|1" />
+
+    </i3dMappings>
+</placeable>

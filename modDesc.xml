@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="71">
+    <author>GMNGjoy</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>Silage Depot</en>
+        <fr>Dépôt D'Ensilage</fr>
+        <de>Silagedepot</de>
+    </title>
+    <description>
+        <en><![CDATA[Multiple silage production depots to convert grass, hay &amp; chaff into Silage.
+RECIPES:
+- Grass Silage: 500L GRASS -> 500L SILAGE, 50L DIGESTATE
+- Hay Silage: 500L HAY -> 500L SILAGE, 50L DIGESTATE
+- Chaff Silage: 500L CHAFF -> 500L SILAGE, 50L DIGESTATE
+
+SMALL SILAGE DEPOT
+- Cost: 130,000
+- Cycles / hour: 30 
+- Inputs: 
+-- 800,000L GRASS
+-- 800,000L HAY
+-- 800,000L CHAFF
+- Outputs:
+-- 1,600,000L SILAGE
+-- 10,000L DIGESTATE
+
+LARGE SILAGE DEPOT
+- Cost: 160,000
+- Cycles / hour: 60 
+- Inputs: 
+-- 1,600,000L GRASS
+-- 1,600,000L HAY
+-- 1,600,000L CHAFF
+- Outputs:
+-- 3,200,000L SILAGE
+-- 32,000L DIGESTATE
+]]></en>
+        <fr><![CDATA[Plusieurs dépôts de production d'ensilage pour convertir l'herbe, le foin &amp; balle dans l'ensilage.
+
+RECETTES:
+- Ensilage d'herbe: 500L GRASS -> 500L SILAGE, 50L DIGESTATE
+- Ensilage de foin: 500L HAY -> 500L SILAGE, 50L DIGESTATE
+- Ensilage de paille: 500L CHAFF -> 500L SILAGE, 50L DIGESTATE
+
+PETIT DÉPÔT D'ENSILAGE
+- Coût: 130,000
+- Cycles / heure: 30 
+- Contributions: 
+-- 800,000L GRASS
+-- 800,000L HAY
+-- 800,000L CHAFF
+- Les Sorties:
+-- 1,600,000L SILAGE
+-- 10,000L DIGESTATE
+
+GRAND DÉPÔT D'ENSILAGE
+- Coût: 160,000
+- Cycles / heure: 60 
+- Eingänge: 
+-- 1,600,000L GRASS
+-- 1,600,000L HAY
+-- 1,600,000L CHAFF
+- Ausgänge:
+-- 3,200,000L SILAGE
+-- 32,000L DIGESTATE
+]]></fr>
+        <de><![CDATA[Mehrere Silageproduktionsdepots zur Umwandlung von Gras, Heu &amp; Spreu in Silage.
+
+REZEPTUREN:
+- Grassilage: 500L GRASS -> 500L SILAGE, 50L DIGESTATE
+- Heu-Silage: 500L HAY -> 500L SILAGE, 50L DIGESTATE
+- Spreu-Silage: 500L CHAFF -> 500L SILAGE, 50L DIGESTATE
+
+KLEINES SILAGEPLATZ
+- Kosten: 130,000
+- Zyklen / Stunde: 30 
+- Eingänge: 
+-- 800,000L GRASS
+-- 800,000L HAY
+-- 800,000L CHAFF
+- Ausgänge:
+-- 1,600,000L SILAGE
+-- 10,000L DIGESTATE
+
+GROSSE SILAGEPLATZ 
+- Kosten: 160,000
+- Zyklen / Stunde: 60 
+- Eingänge: 
+-- 1,600,000L GRASS
+-- 1,600,000L HAY
+-- 1,600,000L CHAFF
+-- 800,000L HAY
+- Ausgänge:
+-- 3,200,000L SILAGE
+-- 32,000L DIGESTATE
+]]></de>
+    </description>
+
+    <iconFilename>icons/icon_silageDepot.dds</iconFilename>
+
+    <multiplayer supported="true" />
+
+    <storeItems>
+        <storeItem xmlFilename="farma400Silage/farma400Silage.xml" />
+        <storeItem xmlFilename="farma800Silage/farma800Silage.xml" />
+    </storeItems>
+
+    <l10n>
+        <text name="shopItem_silageDepot">
+            <en>Silage Depot</en>
+            <fr>Dépôt D'Ensilage</fr>
+            <de>Silagedepot</de>
+        </text>
+        <text name="shopItem_silageDepotSmall">
+            <en>Small Silage Depot</en>
+            <fr>Petit Dépôt D'Ensilage</fr>
+            <de>Kleines Silagedepot</de>
+        </text>
+        <text name="shopItem_silageDepotLarge">
+            <en>Large Silage Depot</en>
+            <fr>Grand Dépôt D'Ensilage</fr>
+            <de>Großes Silagedepot</de>
+        </text>
+        <text name="function_silageDepot">
+            <en>Production depot to convert grass, hay &amp; chaff into Silage.</en>
+            <fr>Dépôt de production pour convertir l'herbe, le foin &amp; paille en ensilage.</fr>
+            <de>Produktionslager zur Verarbeitung von Gras, Heu &amp; Spreu in Silage.</de>
+        </text>
+        <text name="recipe_silageGrass">
+            <en>Grass Silage</en>
+            <fr>Ensilage d'herbe</fr>
+            <de>Grassilage</de>
+        </text>
+        <text name="recipe_silageHay">
+            <en>Hay Silage</en>
+            <fr>Ensilage de foin</fr>
+            <de>Heu-Silage</de>
+        </text>
+        <text name="recipe_silageChaff">
+            <en>Chaff Silage</en>
+            <fr>Ensilage de paille</fr>
+            <de>Spreu-Silage</de>
+        </text>
+    </l10n>
+
+</modDesc>

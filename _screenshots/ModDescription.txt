@@ -1,0 +1,33 @@
+Silage production depot to convert grass, hay & chaff into Silage, with two different sizes to fit any farm.
+
+RECIPES:
+- Grass Silage: 500L GRASS -> 500L SILAGE, 50L DIGESTATE
+- Hay Silage: 500L HAY -> 500L SILAGE, 50L DIGESTATE
+- Chaff Silage: 500L CHAFF -> 500L SILAGE, 50L DIGESTATE
+
+SMALL SILAGE DEPOT
+- Cost: 130,000
+- Cycles / hour: 30 
+- Inputs: 
+-- 800,000L GRASS
+-- 800,000L CHAFF
+-- 800,000L HAY
+- Outputs:
+-- 1,600,000L SILAGE
+-- 10,000L DIGESTATE
+
+LARGE SILAGE DEPOT
+- Cost: 160,000
+- Cycles / hour: 60 
+- Inputs: 
+-- 1,600,000L GRASS
+-- 1,600,000L CHAFF
+- Outputs:
+-- 3,200,000L SILAGE
+-- 32,000L DIGESTATE
+
+BRAND: Unia
+LOCATION: Placeable > Production > Factories
+
+
+Mod Support provided through GMNGjoy discord: http://gmngjoy.com/discord #silage-depot
